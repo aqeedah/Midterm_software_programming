@@ -43,7 +43,7 @@
         }
         else
         {
-            Console.WriteLine("Not enough stock available.");
+            Console.WriteLine("Stock is not available.");
         }
     }
 
@@ -58,10 +58,10 @@
     public void PrintDetails()
     {
         // TODO: Print the details of the item (name, id, price, and stock quantity).
-        Console.WriteLine($"Item Name: {ItemName}");
-        Console.WriteLine($"Item ID: {ItemId}");
-        Console.WriteLine($"Price: {Price}");
-        Console.WriteLine($"Quantity in Stock: {QuantityInStock}");
+        Console.WriteLine($"Item Name is : {ItemName}");
+        Console.WriteLine($"Item ID is: {ItemId}");
+        Console.WriteLine($"Price of the Item is: {Price}");
+        Console.WriteLine($"Quantity of items in Stock: {QuantityInStock}");
     }
 }
 class Program
