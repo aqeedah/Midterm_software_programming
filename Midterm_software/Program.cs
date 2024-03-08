@@ -81,6 +81,7 @@ class Program
         InventoryItem item1 = new InventoryItem("Laptop", 101, 1200.50, 10);
         InventoryItem item2 = new InventoryItem("Smartphone", 102, 800.30, 15);
         InventoryItem item3 = new InventoryItem("Iwatch", 103, 300, 12);
+        InventoryItem item4 = new InventoryItem("Airtag", 104, 78, 3);
 
         // TODO: Implement logic to interact with these objects.
         // Example tasks:
@@ -89,7 +90,7 @@ class Program
         item1.PrintDetails();
         Console.WriteLine();
 
-        Console.WriteLine("Details of Item 2:");
+        Console.WriteLine("Details of Item 2: ");
         item2.PrintDetails();
         Console.WriteLine();
 
@@ -97,10 +98,20 @@ class Program
         item3.PrintDetails();
         Console.WriteLine();
 
+        Console.WriteLine("Details of Item 4: ");
+        item4.PrintDetails();
+        Console.WriteLine();
+
         // 2. Sell some items and then print the updated details.
-        item3.SellItem(3);
-        Console.WriteLine("After selling Items from Item 3:");
+        item3.SellItem(2);
+        Console.WriteLine("After selling 2 Iwatches from Item 3:");
         item3.PrintDetails();
+        Console.WriteLine();
+
+        //selling of 3 Airtags
+        item4.SellItem(3);
+        Console.WriteLine("After selling 3 Airtag from Item 4:");
+        item4.PrintDetails();
         Console.WriteLine();
 
         // 3. Restock an item and print the updated details.
@@ -113,5 +124,6 @@ class Program
         Console.WriteLine($"Check if item 1 is in stock or not? {item1.IsInStock()}");
         Console.WriteLine($"Check if item 2 is in stock or not? {item2.IsInStock()}");
         Console.WriteLine($"Check if item 3 is in stock or not? {item3.IsInStock()}");
+        Console.WriteLine($"Check if item 4 is in stock or not? {item4.IsInStock()}");
     }
 }
