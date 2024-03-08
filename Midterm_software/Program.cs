@@ -60,7 +60,7 @@
         // TODO: Print the details of the item (name, id, price, and stock quantity).
         Console.WriteLine($"Item Name is : {ItemName}");
         Console.WriteLine($"Item ID is: {ItemId}");
-        Console.WriteLine($"Price of the Item is: {Price}");
+        Console.WriteLine($"Price of the Item is: ${Price} ");
         Console.WriteLine($"Quantity of items in Stock: {QuantityInStock}");
     }
 }
@@ -71,20 +71,21 @@ class Program
         // Creating instances of InventoryItem
         InventoryItem item1 = new InventoryItem("Laptop", 101, 1200.50, 10);
         InventoryItem item2 = new InventoryItem("Smartphone", 102, 800.30, 15);
+        InventoryItem item3 = new InventoryItem("Iwatch", 103, 300, 12);
 
         // TODO: Implement logic to interact with these objects.
         // Example tasks:
         // 1. Print details of all items.
-        Console.WriteLine("Item 1 Details:");
+        Console.WriteLine("Details of Item 1: ");
         item1.PrintDetails();
         Console.WriteLine();
 
-        Console.WriteLine("Item 2 Details:");
+        Console.WriteLine("Details of Item 2:");
         item2.PrintDetails();
         Console.WriteLine();
 
         // 2. Sell some items and then print the updated details.
-        item1.SellItem(2);
+        item1.SellItem(3);
         Console.WriteLine("After selling 2 items from item 1:");
         item1.PrintDetails();
         Console.WriteLine();
