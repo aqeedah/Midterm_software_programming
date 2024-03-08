@@ -39,7 +39,7 @@
         // Make sure the stock doesn't go negative.
         if (quantitySold <= QuantityInStock)
         {
-            QuantityInStock = QuantityInStock - quantitySold;
+            QuantityInStock -= quantitySold;
         }
         else
         {
@@ -51,17 +51,26 @@
     public bool IsInStock()
     {
         // TODO: Return true if the item is in stock (quantity > 0), otherwise false.
-        return QuantityInStock > 0;
+        if(QuantityInStock > 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     // Print item details
     public void PrintDetails()
     {
         // TODO: Print the details of the item (name, id, price, and stock quantity).
+        Console.WriteLine("-----------------------------------------------");
         Console.WriteLine($"Item Name is : {ItemName}");
         Console.WriteLine($"Item ID is: {ItemId}");
         Console.WriteLine($"Price of the Item is: ${Price} ");
         Console.WriteLine($"Quantity of items in Stock: {QuantityInStock}");
+        Console.WriteLine("-----------------------------------------------");
     }
 }
 class Program
@@ -84,21 +93,25 @@ class Program
         item2.PrintDetails();
         Console.WriteLine();
 
+        Console.WriteLine("Details of Item 3: ");
+        item3.PrintDetails();
+        Console.WriteLine();
+
         // 2. Sell some items and then print the updated details.
-        item1.SellItem(3);
-        Console.WriteLine("After selling 2 items from item 1:");
-        item1.PrintDetails();
+        item3.SellItem(3);
+        Console.WriteLine("After selling Items from Item 3:");
+        item3.PrintDetails();
         Console.WriteLine();
 
         // 3. Restock an item and print the updated details.
-        item2.RestockItem(5);
-        Console.WriteLine("After restocking 5 items to item 2:");
+        item2.RestockItem(10);
+        Console.WriteLine("After restocking 10 smartphones in item 2:");
         item2.PrintDetails();
-        Console.WriteLine();
+        Console.WriteLine();  
 
         // 4. Check if an item is in stock and print a message accordingly.
-        Console.WriteLine($"Is item 1 in stock? {item1.IsInStock()}");
-        Console.WriteLine($"Is item 2 in stock? {item2.IsInStock()}");
-
+        Console.WriteLine($"Check if item 1 is in stock or not? {item1.IsInStock()}");
+        Console.WriteLine($"Check if item 2 is in stock or not? {item2.IsInStock()}");
+        Console.WriteLine($"Check if item 3 is in stock or not? {item3.IsInStock()}");
     }
 }
